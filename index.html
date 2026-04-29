@@ -109,68 +109,30 @@
                     </div>
                 </div>
 
-                <!-- Form -->
-                <div class="lg:col-span-5 relative z-10" id="apply">
+                <!-- Country Selection -->
+                <div class="lg:col-span-5 relative z-10" id="hero-country-selection">
                     <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
                         <div class="mb-6 text-center">
-                            <h3 class="text-2xl font-bold text-gray-900">Check Your Eligibility</h3>
-                            <p class="text-gray-500 mt-2 text-sm">Get expert guidance for your MBBS journey.</p>
+                            <h3 class="text-2xl font-bold text-gray-900">Choose Your Destination</h3>
+                            <p class="text-gray-500 mt-2 text-sm">Select a country to explore top medical universities.</p>
                         </div>
-
-                        <form id="lead-form" class="space-y-5">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white"
-                                    placeholder="John Doe">
-                            </div>
-
-                            <div>
-                                <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Location /
-                                    City</label>
-                                <input type="text" id="location" name="location" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white"
-                                    placeholder="Mumbai">
-                            </div>
-
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
-                                    Number</label>
-                                <input type="tel" id="phone" name="phone" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white"
-                                    placeholder="+91 98765 43210">
-                            </div>
-
-                            <div>
-                                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Preferred
-                                    Country</label>
-                                <select id="country" name="country" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white text-gray-700">
-                                    <option value="" disabled selected>Select a country</option>
-                                    <option value="Georgia">Georgia</option>
-                                    <option value="Russia">Russia</option>
-                                    <option value="Uzbekistan">Uzbekistan</option>
-                                    <option value="Tajikistan">Tajikistan</option>
-                                </select>
-                            </div>
-
-                            <button type="submit" id="submit-btn"
-                                class="w-full bg-primary-600 text-white font-bold text-lg py-4 rounded-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 transition-all shadow-lg shadow-primary-500/30">
-                                Book Free MBBS Counseling Now
+                        <div class="grid grid-cols-2 gap-4">
+                            <button onclick="selectCountry('Georgia')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
+                                <img src="assets/georgia.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Georgia">
+                                <span class="font-bold text-gray-800">Georgia</span>
                             </button>
-                        </form>
-
-                        <div id="success-message"
-                            class="hidden mt-6 p-4 bg-green-50 rounded-lg border border-green-200 transform transition-all duration-500 opacity-0 translate-y-4">
-                            <div class="flex items-center">
-                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p class="text-sm text-green-700 font-medium">Thank you! we will connect with you soon.
-                                </p>
-                            </div>
+                            <button onclick="selectCountry('Russia')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
+                                <img src="assets/russia.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Russia">
+                                <span class="font-bold text-gray-800">Russia</span>
+                            </button>
+                            <button onclick="selectCountry('Uzbekistan')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
+                                <img src="assets/uzbekistan.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Uzbekistan">
+                                <span class="font-bold text-gray-800">Uzbekistan</span>
+                            </button>
+                            <button onclick="selectCountry('Tajikistan')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
+                                <img src="assets/tajikistan.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Tajikistan">
+                                <span class="font-bold text-gray-800">Tajikistan</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -178,7 +140,7 @@
         </div>
     </section>
 
-    <div id="gated-content" class="hidden">
+    <div id="page-content">
         <!-- Why Choose MBBS Abroad Section -->
         <section id="benefits" class="py-20 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,164 +211,104 @@
             </div>
         </section>
 
-        <!-- Top Destinations Section -->
-        <section id="destinations" class="py-20 bg-white">
+        <!-- Top Universities Section -->
+        <section id="universities" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 id="destinations-heading" class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Top
-                        Destinations for MBBS</h2>
-                    <p class="mt-4 text-xl text-gray-600">Discover the best countries offering premium medical
-                        education.
-                    </p>
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Top Universities to <span class="text-primary-600">Study Abroad</span></h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Georgia -->
-                    <div id="card-Georgia"
-                        class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 bg-primary-900 relative overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 opacity-40 bg-[url('assets/georgia.png')] bg-cover bg-center">
+                <!-- Tabs -->
+                <div class="flex justify-center space-x-6 md:space-x-12 border-b border-gray-200 mb-12 overflow-x-auto pb-4">
+                    <button onclick="selectCountry('Russia')" id="tab-Russia" class="country-tab pb-4 border-b-[3px] font-semibold text-gray-500 border-transparent hover:text-gray-900 whitespace-nowrap transition-colors flex items-center gap-2">
+                        <span class="text-xl">🇷🇺</span> Russia
+                    </button>
+                    <button onclick="selectCountry('Georgia')" id="tab-Georgia" class="country-tab pb-4 border-b-[3px] font-semibold text-gray-500 border-transparent hover:text-gray-900 whitespace-nowrap transition-colors flex items-center gap-2">
+                        <span class="text-xl">🇬🇪</span> Georgia
+                    </button>
+                    <button onclick="selectCountry('Uzbekistan')" id="tab-Uzbekistan" class="country-tab pb-4 border-b-[3px] font-semibold text-gray-500 border-transparent hover:text-gray-900 whitespace-nowrap transition-colors flex items-center gap-2">
+                        <span class="text-xl">🇺🇿</span> Uzbekistan
+                    </button>
+                    <button onclick="selectCountry('Tajikistan')" id="tab-Tajikistan" class="country-tab pb-4 border-b-[3px] font-semibold text-gray-500 border-transparent hover:text-gray-900 whitespace-nowrap transition-colors flex items-center gap-2">
+                        <span class="text-xl">🇹🇯</span> Tajikistan
+                    </button>
+                </div>
+
+                <!-- University Cards Content -->
+                <div id="university-content">
+                    <!-- Georgia Cards -->
+                    <div id="content-Georgia" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
+                                <img src="assets/georgia.png" class="object-cover w-full h-full" alt="Georgia">
                             </div>
-                            <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">GEORGIA</h3>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Kent Walker International University</h4>
+                                <p class="text-xs text-gray-500">Georgia • $6000/yr</p>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
-                        <div class="p-8">
-                            <p class="text-gray-600 mb-6 text-lg">Highly popular for affordability and quality
-                                education.
-                                Enjoy high FMGE/NExT passing trends.</p>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900">Kent Walker International University</h4>
-                                        <p class="text-primary-600 font-semibold">$6000 / year</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900">East West University</h4>
-                                        <p class="text-primary-600 font-semibold">$3900 / year</p>
-                                    </div>
-                                </div>
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
+                                <img src="assets/georgia.png" class="object-cover w-full h-full" alt="Georgia">
                             </div>
-                            <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-500">Tuition starts at $3900/yr</span>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">East West University</h4>
+                                <p class="text-xs text-gray-500">Georgia • $3900/yr</p>
                             </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
                     </div>
 
-                    <!-- Russia -->
-                    <div id="card-Russia"
-                        class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 bg-blue-900 relative overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 opacity-40 bg-[url('assets/russia.png')] bg-cover bg-center">
+                    <!-- Russia Cards -->
+                    <div id="content-Russia" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
+                                <img src="assets/russia.png" class="object-cover w-full h-full" alt="Russia">
                             </div>
-                            <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">RUSSIA</h3>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Tver State Medical University</h4>
+                                <p class="text-xs text-gray-500">Russia • 430,000 RUB/yr</p>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
-                        <div class="p-8">
-                            <p class="text-gray-600 mb-6 text-lg">A trusted option with advanced medical infrastructure
-                                and
-                                vibrant international student life.</p>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900">Tver State Medical University</h4>
-                                        <p class="text-primary-600 font-semibold">430,000 RUB / year</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900">Ryazan State Medical University</h4>
-                                        <p class="text-primary-600 font-semibold">415,000 RUB / year</p>
-                                    </div>
-                                </div>
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
+                                <img src="assets/russia.png" class="object-cover w-full h-full" alt="Russia">
                             </div>
-                            <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-500">Hostel facilities with Indian
-                                    food</span>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Ryazan State Medical University</h4>
+                                <p class="text-xs text-gray-500">Russia • 415,000 RUB/yr</p>
                             </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
                     </div>
 
-                    <!-- Uzbekistan -->
-                    <div id="card-Uzbekistan"
-                        class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 bg-teal-900 relative overflow-hidden flex items-center justify-center">
-                            <div
-                                class="absolute inset-0 opacity-40 bg-[url('assets/uzbekistan.png')] bg-cover bg-center">
+                    <!-- Uzbekistan Cards -->
+                    <div id="content-Uzbekistan" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
+                                <img src="assets/uzbekistan.png" class="object-cover w-full h-full" alt="Uzbekistan">
                             </div>
-                            <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">UZBEKISTAN</h3>
-                        </div>
-                        <div class="p-8">
-                            <p class="text-gray-600 mb-6 text-lg">A growing, low-cost destination with a comfortable and
-                                safe environment for students.</p>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900">Andijan University</h4>
-                                        <p class="text-primary-600 font-semibold">$3500 / year</p>
-                                    </div>
-                                </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Andijan University</h4>
+                                <p class="text-xs text-gray-500">Uzbekistan • $3500/yr</p>
                             </div>
-                            <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-500">Growing Indian student community</span>
-                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
                     </div>
 
-                    <!-- Tajikistan -->
-                    <div id="card-Tajikistan"
-                        class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                        <div class="h-48 bg-emerald-900 relative overflow-hidden flex items-center justify-center">
-                            <div
-                                class="absolute inset-0 opacity-40 bg-[url('assets/tajikistan.png')] bg-cover bg-center">
+                    <!-- Tajikistan Cards -->
+                    <div id="content-Tajikistan" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
+                                <img src="assets/tajikistan.png" class="object-cover w-full h-full" alt="Tajikistan">
                             </div>
-                            <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">TAJIKISTAN</h3>
-                        </div>
-                        <div class="p-8">
-                            <p class="text-gray-600 mb-6 text-lg">Safe environment, affordable cost of living, and
-                                dedicated
-                                Indian food availability.</p>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                    <div>
-                                        <h4 class="font-bold text-gray-900">Tajik National University</h4>
-                                        <p class="text-primary-600 font-semibold">$4500 / year</p>
-                                    </div>
-                                </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Tajik National University</h4>
+                                <p class="text-xs text-gray-500">Tajikistan • $4500/yr</p>
                             </div>
-                            <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-500">NMC-approved & globally
-                                    recognized</span>
-                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
                     </div>
                 </div>
@@ -486,106 +388,165 @@
         </footer>
     </div>
 
+    <!-- Modal Lead Form -->
+    <div id="lead-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" id="modal-backdrop"></div>
+        <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 w-full max-w-md relative z-10 mx-4 transform transition-all scale-95 duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="mb-6 text-center">
+                <h3 class="text-2xl font-bold text-gray-900">Check Your Eligibility</h3>
+                <p class="text-gray-500 mt-2 text-sm">Get expert guidance for your MBBS journey.</p>
+            </div>
+            
+            <form id="lead-form" class="space-y-5">
+                <input type="hidden" id="country" name="country" value="">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white" placeholder="John Doe">
+                </div>
+                <div>
+                    <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Location / City</label>
+                    <input type="text" id="location" name="location" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white" placeholder="Mumbai">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white" placeholder="+91 98765 43210">
+                </div>
+                
+                <!-- Success Message -->
+                <div id="success-message" class="hidden opacity-0 translate-y-4 transition-all duration-500 bg-green-50 text-green-800 rounded-xl p-4 flex items-center shadow-inner">
+                    <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <p class="text-sm font-medium">Thank you! We will connect with you soon.</p>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-primary-600 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-primary-500 transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-primary-500/30">
+                    Book your seats now!
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- JavaScript Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('lead-form');
             const submitBtn = document.getElementById('submit-btn');
             const successMessage = document.getElementById('success-message');
-            const gatedContent = document.getElementById('gated-content');
-
-            // Content Gating Logic
-            const unlockContent = (country) => {
-                if (gatedContent) gatedContent.classList.remove('hidden');
-
-                // Filter destinations
-                if (country) {
-                    document.querySelectorAll('.country-card').forEach(card => {
-                        if (card.id === 'card-' + country) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                    const destHeading = document.getElementById('destinations-heading');
-                    if (destHeading) destHeading.innerText = 'Top Universities in ' + country;
+            const modal = document.getElementById('lead-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const countryInput = document.getElementById('country');
+            
+            // Modal Logic
+            let modalShown = false;
+            
+            const showModal = () => {
+                if (!modalShown && localStorage.getItem('lead_submitted') !== 'true') {
+                    modal.classList.remove('hidden');
+                    // slight delay to allow display to toggle before animating opacity
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        document.getElementById('modal-content').classList.remove('scale-95');
+                    }, 10);
+                    modalShown = true;
                 }
             };
 
-            if (localStorage.getItem('lead_submitted') === 'true') {
-                const prefCountry = localStorage.getItem('preferred_country');
-                unlockContent(prefCountry);
-                document.getElementById('apply').innerHTML = '<div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 text-center"><h3 class="text-2xl font-bold text-gray-900 mb-2">You\'re all set!</h3><p class="text-gray-600">We will connect with you soon. Scroll down to explore.</p></div>';
-            }
+            const hideModal = () => {
+                modal.classList.add('opacity-0');
+                document.getElementById('modal-content').classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            };
 
-            // Replace with actual Google Apps Script Web App URL
+            if (closeModalBtn) closeModalBtn.addEventListener('click', hideModal);
+
+            // Trigger modal on scroll or after 10 seconds
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    showModal();
+                }
+            }, { once: true });
+
+            setTimeout(showModal, 10000);
+
+            // Tab Logic
+            window.selectCountry = (country) => {
+                // Update active tab styling
+                document.querySelectorAll('.country-tab').forEach(tab => {
+                    tab.classList.remove('border-primary-500', 'text-primary-600');
+                    tab.classList.add('border-transparent', 'text-gray-500');
+                });
+                const activeTab = document.getElementById('tab-' + country);
+                if(activeTab) {
+                    activeTab.classList.remove('border-transparent', 'text-gray-500');
+                    activeTab.classList.add('border-primary-500', 'text-primary-600');
+                }
+
+                // Show corresponding content
+                document.querySelectorAll('.country-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                const activeContent = document.getElementById('content-' + country);
+                if(activeContent) activeContent.classList.remove('hidden');
+
+                // Update hidden form input
+                if (countryInput) countryInput.value = country;
+                
+                // If clicked from hero, scroll to universities
+                document.getElementById('universities').scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // Initialize with first tab active
+            selectCountry('Uzbekistan');
+
+            // Form Submit Logic
             const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAmdUf7SVI-uQk5eCHAVvRweZrJH5fkENtTdNZgeHjvevhLLyS7Uooe3Rqlu4m_ulnaw/exec';
 
             if (form) form.addEventListener('submit', (e) => {
                 e.preventDefault();
-
-                // Form UI State
                 const originalBtnText = submitBtn.innerText;
                 submitBtn.innerText = 'Sending...';
                 submitBtn.disabled = true;
                 submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
-                // Reset animation classes
-                successMessage.classList.add('hidden', 'opacity-0', 'translate-y-4');
-                successMessage.classList.remove('opacity-100', 'translate-y-0');
+                
+                successMessage.classList.add('hidden', 'opacity-0');
 
                 const formData = new FormData(form);
 
-                // For Google Apps Script, no-cors is commonly used if not returning JSON
                 fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     body: formData,
-                    mode: 'no-cors' // Use 'no-cors' if you only care about submission, not response reading
+                    mode: 'no-cors'
                 })
-                    .then(() => {
-                        const country = formData.get('country');
-                        localStorage.setItem('lead_submitted', 'true');
-                        if (country) localStorage.setItem('preferred_country', country);
+                .then(() => {
+                    localStorage.setItem('lead_submitted', 'true');
+                    successMessage.classList.remove('hidden');
+                    setTimeout(() => successMessage.classList.remove('opacity-0'), 50);
 
-                        // Success handling (with no-cors, fetch resolves on network success)
-                        successMessage.classList.remove('hidden');
+                    if (typeof confetti === 'function') {
+                        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                    }
 
-                        // Small delay to allow display to toggle before animating
-                        setTimeout(() => {
-                            successMessage.classList.remove('opacity-0', 'translate-y-4');
-                            successMessage.classList.add('opacity-100', 'translate-y-0');
-                        }, 50);
-
-                        // Trigger confetti effect
-                        if (typeof confetti === 'function') {
-                            confetti({
-                                particleCount: 100,
-                                spread: 70,
-                                origin: { y: 0.6 },
-                                colors: ['#3b82f6', '#1d4ed8', '#10b981']
-                            });
-                        }
-
-                        // Unlock content and scroll to destinations
-                        setTimeout(() => {
-                            unlockContent(country);
-                            const destSection = document.getElementById('destinations');
-                            if (destSection) destSection.scrollIntoView({ behavior: 'smooth' });
-                            // Replace form after submission
-                            setTimeout(() => {
-                                document.getElementById('apply').innerHTML = '<div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 text-center"><h3 class="text-2xl font-bold text-gray-900 mb-2">You\'re all set!</h3><p class="text-gray-600">We will connect with you soon. Scroll down to explore.</p></div>';
-                            }, 1000);
-                        }, 2000);
-                    })
-                    .catch(error => {
-                        console.error('Error submitting form:', error);
-                        alert('An error occurred while submitting the form. Please try again later.');
-                    })
-                    .finally(() => {
-                        // Reset UI State
-                        submitBtn.innerText = originalBtnText;
-                        submitBtn.disabled = false;
-                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
-                    });
+                    setTimeout(() => {
+                        hideModal();
+                    }, 2500);
+                })
+                .catch(error => {
+                    console.error('Error submitting form:', error);
+                    alert('An error occurred. Please try again later.');
+                })
+                .finally(() => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                });
             });
         });
     </script>
