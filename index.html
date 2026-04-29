@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Study MBBS abroad in top countries like Georgia, Russia, Uzbekistan, and Tajikistan. Affordable fees, NMC-approved universities, and global career opportunities.">
+    <title>Study MBBS Abroad - 2026 Intake Open</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <img src="https://eduflair.com/wp-content/uploads/2025/05/eduflair-1.png" alt="Eduflair Logo"
+                        class="h-10 w-auto">
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#benefits"
+                        class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Benefits</a>
+                    <a href="#destinations"
+                        class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Destinations</a>
+                    <a href="#fees" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Fee
+                        Comparison</a>
+                    <a href="#apply"
+                        class="bg-primary-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-primary-700 transition-colors shadow-lg shadow-primary-500/30">Apply
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white overflow-hidden">
+        <!-- Background Decorative Elements -->
+        <div
+            class="absolute inset-y-0 right-0 w-1/2 bg-primary-50 rounded-l-full opacity-50 hidden lg:block transform translate-x-1/3">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 relative">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                <!-- Content -->
+                <div class="lg:col-span-7 mb-12 lg:mb-0">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold tracking-wider uppercase mb-6">2026
+                        Intake Open</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Study MBBS in Top Countries like <span class="text-primary-600">Georgia</span>, <span
+                            class="text-primary-600">Russia</span>, <span class="text-primary-600">Uzbekistan</span>,
+                        and <span class="text-primary-600">Tajikistan</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                        Affordable fees, NMC-approved universities, and global career opportunities. Secure your future
+                        as a doctor today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex items-center text-gray-700">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="font-medium">No Entrance Exams</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="font-medium">100% English Medium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:col-span-5 relative z-10" id="apply">
+                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+                        <div class="mb-6 text-center">
+                            <h3 class="text-2xl font-bold text-gray-900">Check Your Eligibility</h3>
+                            <p class="text-gray-500 mt-2 text-sm">Get expert guidance for your MBBS journey.</p>
+                        </div>
+
+                        <form id="lead-form" class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white"
+                                    placeholder="John Doe">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white"
+                                    placeholder="john@example.com">
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
+                                    Number</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white"
+                                    placeholder="+91 98765 43210">
+                            </div>
+
+                            <div>
+                                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Preferred
+                                    Country</label>
+                                <select id="country" name="country" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white text-gray-700">
+                                    <option value="" disabled selected>Select a country</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="Uzbekistan">Uzbekistan</option>
+                                    <option value="Tajikistan">Tajikistan</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" id="submit-btn"
+                                class="w-full bg-primary-600 text-white font-bold text-lg py-4 rounded-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 transition-all shadow-lg shadow-primary-500/30">
+                                Book Free MBBS Counseling Now
+                            </button>
+                        </form>
+
+                        <div id="success-message"
+                            class="hidden mt-6 p-4 bg-green-50 rounded-lg border border-green-200 transform transition-all duration-500 opacity-0 translate-y-4">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="text-sm text-green-700 font-medium">Thank you! we will connect with you soon.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose MBBS Abroad Section -->
+    <section id="benefits" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Why Choose MBBS Abroad?</h2>
+                <p class="mt-4 text-xl text-gray-600">Experience world-class education at a fraction of the cost.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="bg-primary-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Affordable Fees</h3>
+                    <p class="text-gray-600">A cost-effective alternative to private medical colleges in India, saving
+                        you millions.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="bg-primary-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Global Recognition</h3>
+                    <p class="text-gray-600">Earn globally recognized, NMC-approved degrees eligible for FMGE/NExT.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="bg-primary-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">No Entrance Exams</h3>
+                    <p class="text-gray-600">Direct admission without university entrance exams. (NEET qualification
+                        required for Indian students).</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="bg-primary-100 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">English Medium</h3>
+                    <p class="text-gray-600">100% English-medium MBBS programs taught by experienced international
+                        faculties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations Section -->
+    <section id="destinations" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Top Destinations for MBBS</h2>
+                <p class="mt-4 text-xl text-gray-600">Discover the best countries offering premium medical education.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Georgia -->
+                <div
+                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-primary-900 relative overflow-hidden flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1565034946487-077786996e27?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                        </div>
+                        <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">GEORGIA</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-6 text-lg">Highly popular for affordability and quality education.
+                            Enjoy high FMGE/NExT passing trends.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Kent Walker International University</h4>
+                                    <p class="text-primary-600 font-semibold">$6000 / year</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">East West University</h4>
+                                    <p class="text-primary-600 font-semibold">$3900 / year</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-500">Tuition starts at $3900/yr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Russia -->
+                <div
+                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-blue-900 relative overflow-hidden flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                        </div>
+                        <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">RUSSIA</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-6 text-lg">A trusted option with advanced medical infrastructure and
+                            vibrant international student life.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Tver State Medical University</h4>
+                                    <p class="text-primary-600 font-semibold">430,000 RUB / year</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Ryazan State Medical University</h4>
+                                    <p class="text-primary-600 font-semibold">415,000 RUB / year</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-500">Hostel facilities with Indian food</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uzbekistan -->
+                <div
+                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-teal-900 relative overflow-hidden flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1528650774216-7d1a29b40db7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                        </div>
+                        <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">UZBEKISTAN</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-6 text-lg">A growing, low-cost destination with a comfortable and
+                            safe environment for students.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Andijan University</h4>
+                                    <p class="text-primary-600 font-semibold">$3500 / year</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-500">Growing Indian student community</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tajikistan -->
+                <div
+                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-emerald-900 relative overflow-hidden flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1616016629986-e2e4ff477d8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                        </div>
+                        <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">TAJIKISTAN</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-6 text-lg">Safe environment, affordable cost of living, and dedicated
+                            Indian food availability.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Tajik National University</h4>
+                                    <p class="text-primary-600 font-semibold">$4500 / year</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-500">NMC-approved & globally recognized</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Comparison Section -->
+    <section id="fees" class="py-20 bg-primary-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold sm:text-4xl mb-4">Fees Comparison</h2>
+                <p class="text-primary-100 text-xl">See why studying abroad in our partner countries makes financial
+                    sense.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-gray-900 border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="p-6 text-lg font-bold border-b border-gray-200">Country</th>
+                                <th class="p-6 text-lg font-bold border-b border-gray-200">Tuition Fees (Per Year)</th>
+                                <th class="p-6 text-lg font-bold border-b border-gray-200">Living Cost (Per Year)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="bg-primary-50/50 hover:bg-primary-50 transition-colors">
+                                <td class="p-6 font-bold text-primary-700 flex items-center">
+                                    <span class="w-3 h-3 rounded-full bg-primary-500 mr-3"></span>
+                                    Georgia
+                                </td>
+                                <td class="p-6 font-semibold">$3,900 – $6,500</td>
+                                <td class="p-6 font-semibold">$2,500 – $3,500</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-6 font-semibold text-gray-600">USA</td>
+                                <td class="p-6 text-gray-600">$30,000 – $60,000</td>
+                                <td class="p-6 text-gray-600">$10,000 – $15,000</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-6 font-semibold text-gray-600">UK</td>
+                                <td class="p-6 text-gray-600">$40,000 – $50,000</td>
+                                <td class="p-6 text-gray-600">$12,000 – $15,000</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-6 font-semibold text-gray-600">Australia</td>
+                                <td class="p-6 text-gray-600">$50,000 – $70,000</td>
+                                <td class="p-6 text-gray-600">$15,000 – $20,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Call to Action -->
+    <footer class="bg-gray-900 py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl sm:text-5xl font-black text-white mb-6">Apply for MBBS Abroad<br><span
+                    class="text-primary-400">- 2026 Intake Open -</span></h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Limited Seats Available. Start your journey to
+                becoming a globally recognized doctor with our expert guidance and support.</p>
+            <a href="#apply"
+                class="inline-block bg-primary-600 text-white font-bold text-xl px-12 py-5 rounded-full hover:bg-primary-500 transform hover:-translate-y-1 transition-all shadow-[0_0_40px_rgba(37,99,235,0.4)]">
+                Book Free MBBS Counseling Now
+            </a>
+
+            <div class="mt-20 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+                <p>&copy; 2026 Eduflair. All rights reserved. MBBS Abroad for Indian Students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('lead-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+
+            // Replace with actual Google Apps Script Web App URL
+            const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAmdUf7SVI-uQk5eCHAVvRweZrJH5fkENtTdNZgeHjvevhLLyS7Uooe3Rqlu4m_ulnaw/exec';
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Form UI State
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.innerText = 'Sending...';
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+                // Reset animation classes
+                successMessage.classList.add('hidden', 'opacity-0', 'translate-y-4');
+                successMessage.classList.remove('opacity-100', 'translate-y-0');
+
+                const formData = new FormData(form);
+
+                // For Google Apps Script, no-cors is commonly used if not returning JSON
+                fetch(GOOGLE_APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Use 'no-cors' if you only care about submission, not response reading
+                })
+                    .then(() => {
+                        // Success handling (with no-cors, fetch resolves on network success)
+                        successMessage.classList.remove('hidden');
+                        
+                        // Small delay to allow display to toggle before animating
+                        setTimeout(() => {
+                            successMessage.classList.remove('opacity-0', 'translate-y-4');
+                            successMessage.classList.add('opacity-100', 'translate-y-0');
+                        }, 50);
+
+                        // Trigger confetti effect
+                        if (typeof confetti === 'function') {
+                            confetti({
+                                particleCount: 100,
+                                spread: 70,
+                                origin: { y: 0.6 },
+                                colors: ['#3b82f6', '#1d4ed8', '#10b981']
+                            });
+                        }
+
+                        form.reset();
+                    })
+                    .catch(error => {
+                        console.error('Error submitting form:', error);
+                        alert('An error occurred while submitting the form. Please try again later.');
+                    })
+                    .finally(() => {
+                        // Reset UI State
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
