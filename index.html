@@ -177,6 +177,7 @@
         </div>
     </section>
 
+    <div id="gated-content" class="hidden">
     <!-- Why Choose MBBS Abroad Section -->
     <section id="benefits" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -248,18 +249,18 @@
     <section id="destinations" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Top Destinations for MBBS</h2>
+                <h2 id="destinations-heading" class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Top Destinations for MBBS</h2>
                 <p class="mt-4 text-xl text-gray-600">Discover the best countries offering premium medical education.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Georgia -->
-                <div
-                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div id="card-Georgia"
+                    class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="h-48 bg-primary-900 relative overflow-hidden flex items-center justify-center">
                         <div
-                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1565034946487-077786996e27?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                            class="absolute inset-0 opacity-40 bg-[url('assets/georgia.png')] bg-cover bg-center">
                         </div>
                         <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">GEORGIA</h3>
                     </div>
@@ -297,11 +298,11 @@
                 </div>
 
                 <!-- Russia -->
-                <div
-                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div id="card-Russia"
+                    class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="h-48 bg-blue-900 relative overflow-hidden flex items-center justify-center">
                         <div
-                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                            class="absolute inset-0 opacity-40 bg-[url('assets/russia.png')] bg-cover bg-center">
                         </div>
                         <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">RUSSIA</h3>
                     </div>
@@ -339,11 +340,11 @@
                 </div>
 
                 <!-- Uzbekistan -->
-                <div
-                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div id="card-Uzbekistan"
+                    class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="h-48 bg-teal-900 relative overflow-hidden flex items-center justify-center">
                         <div
-                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1528650774216-7d1a29b40db7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                            class="absolute inset-0 opacity-40 bg-[url('assets/uzbekistan.png')] bg-cover bg-center">
                         </div>
                         <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">UZBEKISTAN</h3>
                     </div>
@@ -370,11 +371,11 @@
                 </div>
 
                 <!-- Tajikistan -->
-                <div
-                    class="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                <div id="card-Tajikistan"
+                    class="country-card group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                     <div class="h-48 bg-emerald-900 relative overflow-hidden flex items-center justify-center">
                         <div
-                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1616016629986-e2e4ff477d8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                            class="absolute inset-0 opacity-40 bg-[url('assets/tajikistan.png')] bg-cover bg-center">
                         </div>
                         <h3 class="text-4xl font-black text-white relative z-10 tracking-wider">TAJIKISTAN</h3>
                     </div>
@@ -472,6 +473,7 @@
             </div>
         </div>
     </footer>
+    </div>
 
     <!-- JavaScript Logic -->
     <script>
@@ -479,11 +481,36 @@
             const form = document.getElementById('lead-form');
             const submitBtn = document.getElementById('submit-btn');
             const successMessage = document.getElementById('success-message');
+            const gatedContent = document.getElementById('gated-content');
+
+            // Content Gating Logic
+            const unlockContent = (country) => {
+                if (gatedContent) gatedContent.classList.remove('hidden');
+                
+                // Filter destinations
+                if (country) {
+                    document.querySelectorAll('.country-card').forEach(card => {
+                        if (card.id === 'card-' + country) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    const destHeading = document.getElementById('destinations-heading');
+                    if (destHeading) destHeading.innerText = 'Top Universities in ' + country;
+                }
+            };
+
+            if (localStorage.getItem('lead_submitted') === 'true') {
+                const prefCountry = localStorage.getItem('preferred_country');
+                unlockContent(prefCountry);
+                document.getElementById('apply').innerHTML = '<div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 text-center"><h3 class="text-2xl font-bold text-gray-900 mb-2">You\'re all set!</h3><p class="text-gray-600">We will connect with you soon. Scroll down to explore.</p></div>';
+            }
 
             // Replace with actual Google Apps Script Web App URL
             const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAmdUf7SVI-uQk5eCHAVvRweZrJH5fkENtTdNZgeHjvevhLLyS7Uooe3Rqlu4m_ulnaw/exec';
 
-            form.addEventListener('submit', (e) => {
+            if(form) form.addEventListener('submit', (e) => {
                 e.preventDefault();
 
                 // Form UI State
@@ -504,6 +531,10 @@
                     mode: 'no-cors' // Use 'no-cors' if you only care about submission, not response reading
                 })
                     .then(() => {
+                        const country = formData.get('country');
+                        localStorage.setItem('lead_submitted', 'true');
+                        if (country) localStorage.setItem('preferred_country', country);
+
                         // Success handling (with no-cors, fetch resolves on network success)
                         successMessage.classList.remove('hidden');
                         
@@ -523,7 +554,16 @@
                             });
                         }
 
-                        form.reset();
+                        // Unlock content and scroll to destinations
+                        setTimeout(() => {
+                            unlockContent(country);
+                            const destSection = document.getElementById('destinations');
+                            if(destSection) destSection.scrollIntoView({ behavior: 'smooth' });
+                            // Replace form after submission
+                            setTimeout(() => {
+                                document.getElementById('apply').innerHTML = '<div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 text-center"><h3 class="text-2xl font-bold text-gray-900 mb-2">You\'re all set!</h3><p class="text-gray-600">We will connect with you soon. Scroll down to explore.</p></div>';
+                            }, 1000);
+                        }, 2000);
                     })
                     .catch(error => {
                         console.error('Error submitting form:', error);
