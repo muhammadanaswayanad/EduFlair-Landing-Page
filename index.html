@@ -471,8 +471,8 @@
             // Modal Logic
             let modalShown = false;
             
-            const showModal = () => {
-                if (!modalShown && localStorage.getItem('lead_submitted') !== 'true') {
+            const showModal = (force = false) => {
+                if ((!modalShown || force) && localStorage.getItem('lead_submitted') !== 'true') {
                     modal.classList.remove('hidden');
                     // slight delay to allow display to toggle before animating opacity
                     setTimeout(() => {
@@ -482,7 +482,7 @@
                     modalShown = true;
                 }
             };
-            window.showModal = showModal;
+            window.showModal = () => showModal(true);
 
             const hideModal = () => {
                 modal.classList.add('opacity-0');
