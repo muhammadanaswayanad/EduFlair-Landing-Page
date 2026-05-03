@@ -497,7 +497,12 @@
                 </div>
                 <div>
                     <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white" placeholder="+91 98765 43210">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-500 font-medium">
+                            +91
+                        </div>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10" class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white" placeholder="98765 43210" title="Please enter exactly 10 digits">
+                    </div>
                 </div>
                 
                 <!-- Success Message -->
@@ -577,14 +582,18 @@
 
             if (closeModalBtn) closeModalBtn.addEventListener('click', hideModal);
 
-            // Trigger modal on scroll or after 10 seconds
+            // Trigger modal on scroll or every 5 seconds until submitted
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    showModal();
+                if (window.scrollY > 300 && localStorage.getItem('lead_submitted') !== 'true' && modal.classList.contains('hidden')) {
+                    showModal(true);
                 }
             }, { once: true });
 
-            setTimeout(showModal, 10000);
+            setInterval(() => {
+                if (localStorage.getItem('lead_submitted') !== 'true' && modal.classList.contains('hidden')) {
+                    showModal(true);
+                }
+            }, 5000);
 
             // Tab Logic
             window.selectCountry = (country) => {
