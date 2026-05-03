@@ -32,6 +32,20 @@
                             700: '#1d4ed8',
                             900: '#1e3a8a',
                         }
+                    },
+                    animation: {
+                        marquee: 'marquee 25s linear infinite',
+                        marquee2: 'marquee2 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        marquee2: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0%)' },
+                        },
                     }
                 }
             }
@@ -81,9 +95,9 @@
                         class="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold tracking-wider uppercase mb-6">2026
                         Intake Open</span>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                        Study MBBS in Top Countries like <span class="text-primary-600">Georgia</span>, <span
-                            class="text-primary-600">Russia</span>, <span class="text-primary-600">Uzbekistan</span>,
-                        and <span class="text-primary-600">Tajikistan</span>
+                        Study MBBS in Top Countries like <span class="text-rose-500">Georgia</span>, <span
+                            class="text-blue-600">Russia</span>, <span class="text-emerald-500">Uzbekistan</span>,
+                        and <span class="text-amber-500">Tajikistan</span>
                     </h1>
                     <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
                         Affordable fees, NMC-approved universities, and global career opportunities. Secure your future
@@ -118,19 +132,19 @@
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <button onclick="selectCountry('Georgia')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
-                                <img src="assets/georgia.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Georgia">
+                                <img src="assets/map_flag_georgia.png" class="w-16 h-16 rounded-full object-contain bg-white border border-gray-100 p-1 mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Georgia">
                                 <span class="font-bold text-gray-800">Georgia</span>
                             </button>
                             <button onclick="selectCountry('Russia')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
-                                <img src="assets/russia.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Russia">
+                                <img src="assets/map_flag_russia.png" class="w-16 h-16 rounded-full object-contain bg-white border border-gray-100 p-1 mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Russia">
                                 <span class="font-bold text-gray-800">Russia</span>
                             </button>
                             <button onclick="selectCountry('Uzbekistan')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
-                                <img src="assets/uzbekistan.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Uzbekistan">
+                                <img src="assets/map_flag_uzbekistan.png" class="w-16 h-16 rounded-full object-contain bg-white border border-gray-100 p-1 mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Uzbekistan">
                                 <span class="font-bold text-gray-800">Uzbekistan</span>
                             </button>
                             <button onclick="selectCountry('Tajikistan')" class="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-100 hover:border-primary-500 hover:bg-primary-50 transition-all group cursor-pointer">
-                                <img src="assets/tajikistan.png" class="w-16 h-16 rounded-full object-cover mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Tajikistan">
+                                <img src="assets/map_flag_tajikistan.png" class="w-16 h-16 rounded-full object-contain bg-white border border-gray-100 p-1 mb-3 group-hover:scale-110 transition-transform shadow-sm" alt="Tajikistan">
                                 <span class="font-bold text-gray-800">Tajikistan</span>
                             </button>
                         </div>
@@ -141,6 +155,30 @@
     </section>
 
     <div id="page-content">
+        <!-- Recognitions & Accreditations Section -->
+        <section class="py-10 bg-white border-b border-gray-100 overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+                <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest">Recognitions & Accreditations</p>
+            </div>
+            
+            <div class="relative flex overflow-hidden group">
+                <div class="flex animate-marquee space-x-12 sm:space-x-24 items-center px-6">
+                    <img src="assets/recognition-ecfmg.png" alt="ECFMG" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-faimer.png" alt="FAIMER" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-national medical commission.jpg" alt="NMC" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-who.png" alt="WHO" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-world federation for medical education.png" alt="WFME" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                
+                <div class="flex animate-marquee2 space-x-12 sm:space-x-24 items-center absolute top-0 px-6">
+                    <img src="assets/recognition-ecfmg.png" alt="ECFMG" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-faimer.png" alt="FAIMER" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-national medical commission.jpg" alt="NMC" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-who.png" alt="WHO" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-world federation for medical education.png" alt="WFME" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+            </div>
+        </section>
         <!-- Why Choose MBBS Abroad Section -->
         <section id="benefits" class="py-20 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -219,7 +257,7 @@
                 </div>
 
                 <!-- Tabs -->
-                <div class="flex justify-center space-x-6 md:space-x-12 border-b border-gray-200 mb-12 overflow-x-auto pb-4">
+                <div class="flex justify-start md:justify-center space-x-6 md:space-x-12 border-b border-gray-200 mb-12 overflow-x-auto pb-4 px-4 md:px-0">
                     <button onclick="selectCountry('Russia')" id="tab-Russia" class="country-tab pb-4 border-b-[3px] font-semibold text-gray-500 border-transparent hover:text-gray-900 whitespace-nowrap transition-colors flex items-center gap-2">
                         <span class="text-xl">🇷🇺</span> Russia
                     </button>
@@ -239,8 +277,8 @@
                     <!-- Georgia Cards -->
                     <div id="content-Georgia" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
-                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
-                                <img src="assets/georgia.png" class="object-cover w-full h-full" alt="Georgia">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_kent_walker.png" class="object-cover w-full h-full" alt="Kent Walker International University">
                             </div>
                             <div class="flex-grow">
                                 <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Kent Walker International University</h4>
@@ -249,8 +287,38 @@
                             <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
                         <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
-                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
-                                <img src="assets/georgia.png" class="object-cover w-full h-full" alt="Georgia">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_georgian_american.png" class="object-cover w-full h-full" alt="Georgian American University">
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Georgian American University</h4>
+                                <p class="text-xs text-gray-500">Georgia • $6000/yr</p>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
+                        </div>
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_georgian_national.png" class="object-cover w-full h-full" alt="Georgian National University (SEU)">
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Georgian National University (SEU)</h4>
+                                <p class="text-xs text-gray-500">Georgia • $5900/yr</p>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
+                        </div>
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_university_of_georgia.png" class="object-cover w-full h-full" alt="University of Georgia (UG)">
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">University of Georgia (UG)</h4>
+                                <p class="text-xs text-gray-500">Georgia • $6500/yr</p>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
+                        </div>
+                        <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_east_west.png" class="object-cover w-full h-full" alt="East West University">
                             </div>
                             <div class="flex-grow">
                                 <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">East West University</h4>
@@ -263,8 +331,8 @@
                     <!-- Russia Cards -->
                     <div id="content-Russia" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
-                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
-                                <img src="assets/russia.png" class="object-cover w-full h-full" alt="Russia">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_tver_state.png" class="object-cover w-full h-full" alt="Tver State Medical University">
                             </div>
                             <div class="flex-grow">
                                 <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Tver State Medical University</h4>
@@ -273,8 +341,8 @@
                             <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-md">6 Years</div>
                         </div>
                         <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
-                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
-                                <img src="assets/russia.png" class="object-cover w-full h-full" alt="Russia">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_ryazan_state.png" class="object-cover w-full h-full" alt="Ryazan State Medical University">
                             </div>
                             <div class="flex-grow">
                                 <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Ryazan State Medical University</h4>
@@ -287,8 +355,8 @@
                     <!-- Uzbekistan Cards -->
                     <div id="content-Uzbekistan" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
-                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
-                                <img src="assets/uzbekistan.png" class="object-cover w-full h-full" alt="Uzbekistan">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_andijan.png" class="object-cover w-full h-full" alt="Andijan University">
                             </div>
                             <div class="flex-grow">
                                 <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Andijan University</h4>
@@ -301,8 +369,8 @@
                     <!-- Tajikistan Cards -->
                     <div id="content-Tajikistan" class="country-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div class="border border-gray-200 rounded-2xl p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow bg-white cursor-pointer" onclick="showModal()">
-                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100">
-                                <img src="assets/tajikistan.png" class="object-cover w-full h-full" alt="Tajikistan">
+                            <div class="w-16 h-16 rounded-full flex-shrink-0 overflow-hidden border border-gray-100 bg-gray-50">
+                                <img src="assets/uni_tajik_national.png" class="object-cover w-full h-full" alt="Tajik National University">
                             </div>
                             <div class="flex-grow">
                                 <h4 class="font-bold text-gray-900 text-sm leading-tight mb-1">Tajik National University</h4>
@@ -376,13 +444,28 @@
                         class="text-primary-400">- 2026 Intake Open -</span></h2>
                 <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Limited Seats Available. Start your journey to
                     becoming a globally recognized doctor with our expert guidance and support.</p>
-                <a href="#apply"
+                <a href="#" onclick="event.preventDefault(); showModal(true);"
                     class="inline-block bg-primary-600 text-white font-bold text-xl px-12 py-5 rounded-full hover:bg-primary-500 transform hover:-translate-y-1 transition-all shadow-[0_0_40px_rgba(37,99,235,0.4)]">
                     Book Free MBBS Counseling Now
                 </a>
 
-                <div class="mt-20 pt-8 border-t border-gray-800 text-gray-500 text-sm">
-                    <p>&copy; 2026 Eduflair. All rights reserved. MBBS Abroad for Indian Students.</p>
+                <div class="mt-16 text-gray-400 flex flex-col items-center space-y-4">
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-2">Eduflair Learning Solutions Pvt Ltd</h4>
+                        <p>3rd Floor, RP Mall, Mavoor Road,</p>
+                        <p>Calicut, Kerala - 673004</p>
+                    </div>
+                    <div class="flex flex-wrap justify-center items-center gap-2 sm:space-x-4 text-sm font-medium">
+                        <a href="tel:+918891627111" class="hover:text-white transition-colors">+91 8891 62 71 11</a>
+                        <span class="text-gray-600 hidden sm:inline">|</span>
+                        <a href="mailto:info@eduflair.com" class="hover:text-white transition-colors">info@eduflair.com</a>
+                        <span class="text-gray-600 hidden sm:inline">|</span>
+                        <a href="https://www.eduflair.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">www.eduflair.com</a>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+                    <p>&copy; 2026 Eduflair Learning Solutions Pvt Ltd. All rights reserved. MBBS Abroad for Indian Students.</p>
                 </div>
             </div>
         </footer>
