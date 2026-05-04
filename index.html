@@ -68,13 +68,13 @@
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#benefits"
                         class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Benefits</a>
-                    <a href="#destinations"
+                    <a href="#universities"
                         class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Destinations</a>
                     <a href="#fees" class="text-gray-600 hover:text-primary-600 font-medium transition-colors">Fee
                         Comparison</a>
-                    <a href="#apply"
+                    <button onclick="showModal()"
                         class="bg-primary-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-primary-700 transition-colors shadow-lg shadow-primary-500/30">Apply
-                        Now</a>
+                        Now</button>
                 </div>
             </div>
         </div>
@@ -91,9 +91,18 @@
             <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
                 <!-- Content -->
                 <div class="lg:col-span-7 mb-12 lg:mb-0">
-                    <span
-                        class="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold tracking-wider uppercase mb-6">2026
-                        Intake Open</span>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold tracking-wider uppercase">
+                            Apply now for Sept 2026 intake
+                        </span>
+                        <span class="inline-flex items-center py-1 px-3 rounded-full bg-red-100 text-red-700 text-sm font-semibold tracking-wider uppercase">
+                            <span class="relative flex h-2.5 w-2.5 mr-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                            </span>
+                            <span class="animate-pulse font-bold">Limited Seats Only</span>
+                        </span>
+                    </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                         Study MBBS in Top Countries like <span class="text-rose-500">Georgia</span>, <span
                             class="text-blue-600">Russia</span>, <span class="text-emerald-500">Uzbekistan</span>,
@@ -162,20 +171,20 @@
             </div>
             
             <div class="relative flex overflow-hidden group">
-                <div class="flex animate-marquee space-x-12 sm:space-x-24 items-center px-6">
-                    <img src="assets/recognition-ecfmg.png" alt="ECFMG" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-faimer.png" alt="FAIMER" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-national medical commission.jpg" alt="NMC" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-who.png" alt="WHO" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-world federation for medical education.png" alt="WFME" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <div class="flex animate-marquee shrink-0 min-w-full justify-around space-x-8 sm:space-x-24 items-center px-6">
+                    <img src="assets/recognition-ecfmg.png" alt="ECFMG" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-faimer.png" alt="FAIMER" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-national medical commission.jpg" alt="NMC" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-who.png" alt="WHO" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-world federation for medical education.png" alt="WFME" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
                 </div>
                 
-                <div class="flex animate-marquee2 space-x-12 sm:space-x-24 items-center absolute top-0 px-6">
-                    <img src="assets/recognition-ecfmg.png" alt="ECFMG" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-faimer.png" alt="FAIMER" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-national medical commission.jpg" alt="NMC" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-who.png" alt="WHO" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="assets/recognition-world federation for medical education.png" alt="WFME" class="h-12 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <div class="flex animate-marquee2 shrink-0 min-w-full justify-around space-x-8 sm:space-x-24 items-center absolute top-0 left-0 px-6">
+                    <img src="assets/recognition-ecfmg.png" alt="ECFMG" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-faimer.png" alt="FAIMER" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-national medical commission.jpg" alt="NMC" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-who.png" alt="WHO" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="assets/recognition-world federation for medical education.png" alt="WFME" class="h-10 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
                 </div>
             </div>
         </section>
@@ -253,7 +262,7 @@
         <section id="universities" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Top Universities to <span class="text-primary-600">Study Abroad</span></h2>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Top Universities to <span class="text-primary-600">Study MBBS Abroad</span></h2>
                 </div>
 
                 <!-- Tabs -->
@@ -440,9 +449,18 @@
             <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
             </div>
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="flex justify-center mb-6">
+                    <span class="inline-flex items-center py-1 px-3 rounded-full bg-red-900/50 border border-red-500/30 text-red-400 text-sm font-semibold tracking-wider uppercase">
+                        <span class="relative flex h-2.5 w-2.5 mr-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                        </span>
+                        <span class="animate-pulse font-bold">Limited Seats Available</span>
+                    </span>
+                </div>
                 <h2 class="text-4xl sm:text-5xl font-black text-white mb-6">Apply for MBBS Abroad<br><span
                         class="text-primary-400">- 2026 Intake Open -</span></h2>
-                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Limited Seats Available. Start your journey to
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Start your journey to
                     becoming a globally recognized doctor with our expert guidance and support.</p>
                 <a href="#" onclick="event.preventDefault(); showModal(true);"
                     class="inline-block bg-primary-600 text-white font-bold text-xl px-12 py-5 rounded-full hover:bg-primary-500 transform hover:-translate-y-1 transition-all shadow-[0_0_40px_rgba(37,99,235,0.4)]">
@@ -486,7 +504,16 @@
             </div>
             
             <form id="lead-form" class="space-y-5">
-                <input type="hidden" id="country" name="country" value="">
+                <div>
+                    <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Preferred Destination</label>
+                    <select id="country" name="country" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white appearance-none cursor-pointer">
+                        <option value="" disabled selected>Select a country</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                    </select>
+                </div>
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                     <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors bg-gray-50 focus:bg-white" placeholder="John Doe">
@@ -559,8 +586,35 @@
             // Modal Logic
             let modalShown = false;
             
-            const showModal = (force = false) => {
-                if ((!modalShown || force) && localStorage.getItem('lead_submitted') !== 'true') {
+            window.showModal = function(force = false) {
+                const isForced = force === true || arguments.length === 0;
+
+                if (localStorage.getItem('lead_submitted') === 'true' && isForced) {
+                    document.getElementById('lead-form').classList.add('hidden');
+                    const header = modal.querySelector('.text-center');
+                    header.innerHTML = `
+                        <h3 class="text-2xl font-bold text-gray-900">We're on it!</h3>
+                        <p class="text-gray-500 mt-2 text-sm">We are already in pursuit to contact you. If you need immediate assistance, please reach out directly.</p>
+                        <div class="mt-6 flex flex-col gap-3">
+                            <a href="https://wa.me/918891627111" target="_blank" class="w-full bg-[#25D366] text-white font-bold py-3 px-4 rounded-xl flex justify-center items-center gap-2 hover:bg-[#20bd5a] transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.124.551 4.195 1.6 6.02L.031 24l6.115-1.603a12.023 12.023 0 005.885 1.54h.005c6.645 0 12.03-5.385 12.03-12.03A12.045 12.045 0 0012.031 0zm0 21.968a9.99 9.99 0 01-5.093-1.39l-.365-.216-3.784.992.992-3.692-.237-.378a9.96 9.96 0 01-1.523-5.285c0-5.5 4.475-9.975 9.975-9.975s9.975 4.475 9.975 9.975-4.475 9.975-9.975 9.975zm5.474-7.48c-.3-.15-1.776-.876-2.052-.976-.275-.1-.475-.15-.675.15s-.776.976-.95 1.176c-.176.2-.351.226-.651.076-1.7-.775-2.825-1.675-3.876-3.426-.175-.3-.025-.45.125-.6.125-.125.3-.3.45-.475.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.626-.926-2.226-.25-.6-.5-.525-.675-.525h-.575c-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.502s1.075 2.9 1.225 3.1c.15.2 2.1 3.2 5.076 4.5.7.3 1.25.475 1.675.6.725.225 1.375.2 1.875.125.575-.1 1.776-.726 2.026-1.426.25-.7.25-1.3.175-1.426-.075-.125-.275-.2-.575-.35z"/></svg>
+                                WhatsApp Us
+                            </a>
+                            <a href="tel:+918891627111" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-xl flex justify-center items-center gap-2 hover:bg-blue-700 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                Call Us
+                            </a>
+                        </div>
+                    `;
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        document.getElementById('modal-content').classList.remove('scale-95');
+                    }, 10);
+                    return;
+                }
+
+                if ((!modalShown || isForced) && localStorage.getItem('lead_submitted') !== 'true') {
                     modal.classList.remove('hidden');
                     // slight delay to allow display to toggle before animating opacity
                     setTimeout(() => {
@@ -570,7 +624,6 @@
                     modalShown = true;
                 }
             };
-            window.showModal = () => showModal(true);
 
             const hideModal = () => {
                 modal.classList.add('opacity-0');
@@ -585,13 +638,13 @@
             // Trigger modal on scroll or every 5 seconds until submitted
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300 && localStorage.getItem('lead_submitted') !== 'true' && modal.classList.contains('hidden')) {
-                    showModal(true);
+                    showModal(false);
                 }
             }, { once: true });
 
             setInterval(() => {
                 if (localStorage.getItem('lead_submitted') !== 'true' && modal.classList.contains('hidden')) {
-                    showModal(true);
+                    showModal(false);
                 }
             }, 5000);
 
