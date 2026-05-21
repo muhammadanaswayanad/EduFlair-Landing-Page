@@ -604,12 +604,22 @@
                 successMessage.classList.add('hidden', 'opacity-0');
 
                 const formData = new FormData(form);
+                const name = formData.get('name') || '';
+                const phone = formData.get('phone') || '';
+                const location = formData.get('location') || '';
+                
+                // GetLead CRM API
+                const getLeadUrl = `https://app.getleadcrm.com/api/gl-website-contacts?token=gl_6a3daeda97dae6d679cf&name=${encodeURIComponent(name)}&countrycode=91&mobileno=${encodeURIComponent(phone)}&location=${encodeURIComponent(location)}&source=Landing Page Ausbildung`;
+                const getLeadPromise = fetch(getLeadUrl, { method: 'POST', mode: 'no-cors' });
 
-                fetch(GOOGLE_APPS_SCRIPT_URL, {
+                // Google Apps Script
+                const gasPromise = fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
                     body: formData,
                     mode: 'no-cors'
-                })
+                });
+
+                Promise.all([gasPromise, getLeadPromise])
                 .then(() => {
                     localStorage.setItem('lead_submitted', 'true');
                     successMessage.classList.remove('hidden');
