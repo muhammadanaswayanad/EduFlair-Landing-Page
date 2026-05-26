@@ -587,7 +587,6 @@
             const closeModalBtn = document.getElementById('close-modal');
             
             // Modal Logic
-            let modalShown = false;
             
             window.showModal = function(force = false) {
                 const isForced = force === true || arguments.length === 0;
@@ -619,14 +618,13 @@
                     return;
                 }
 
-                if ((!modalShown || isForced) && localStorage.getItem('lead_submitted') !== 'true') {
+                if (localStorage.getItem('lead_submitted') !== 'true') {
                     modal.classList.remove('hidden');
                     // slight delay to allow display to toggle before animating opacity
                     setTimeout(() => {
                         modal.classList.remove('opacity-0');
                         document.getElementById('modal-content').classList.remove('scale-95');
                     }, 10);
-                    modalShown = true;
                 }
             };
 
@@ -651,7 +649,7 @@
                 if (localStorage.getItem('lead_submitted') !== 'true' && modal.classList.contains('hidden')) {
                     showModal(false);
                 }
-            }, 5000);
+            }, 10000);
 
             // Form Submit Logic
             const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAmdUf7SVI-uQk5eCHAVvRweZrJH5fkENtTdNZgeHjvevhLLyS7Uooe3Rqlu4m_ulnaw/exec';
