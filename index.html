@@ -684,9 +684,19 @@
                 const name = formData.get('name') || '';
                 const phone = formData.get('phone') || '';
                 const location = formData.get('location') || '';
+                // Capture URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const campaignName = urlParams.get('campaign') || urlParams.get('campaign_name') || urlParams.get('utm_campaign') || '';
+                const adsetName = urlParams.get('adset') || urlParams.get('adset_name') || urlParams.get('adgroup') || urlParams.get('utm_adset') || '';
+                const adName = urlParams.get('ad') || urlParams.get('ad_name') || urlParams.get('utm_ad') || urlParams.get('utm_content') || '';
                 
                 // GetLead CRM API
-                const getLeadUrl = `https://app.getleadcrm.com/api/gl-website-contacts?token=gl_6a3daeda97dae6d679cf&name=${encodeURIComponent(name)}&countrycode=91&mobileno=${encodeURIComponent(phone)}&location=${encodeURIComponent(location)}&source=Landing Page Ausbildung`;
+                let getLeadUrl = `https://app.getleadcrm.com/api/gl-website-contacts?token=gl_6a3daeda97dae6d679cf&name=${encodeURIComponent(name)}&countrycode=91&mobileno=${encodeURIComponent(phone)}&location=${encodeURIComponent(location)}&source=Landing Page Ausbildung`;
+                
+                if (campaignName) getLeadUrl += `&campaign_name=${encodeURIComponent(campaignName)}`;
+                if (adsetName) getLeadUrl += `&adset_name=${encodeURIComponent(adsetName)}`;
+                if (adName) getLeadUrl += `&ad_name=${encodeURIComponent(adName)}`;
+                
                 const getLeadPromise = fetch(getLeadUrl, { method: 'POST', mode: 'no-cors' });
 
                 // Google Apps Script
