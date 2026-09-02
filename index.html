@@ -669,6 +669,8 @@
 
             // Form Submit Logic
             const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxAmdUf7SVI-uQk5eCHAVvRweZrJH5fkENtTdNZgeHjvevhLLyS7Uooe3Rqlu4m_ulnaw/exec';
+            const SCHOLARCRM_URL = 'https://api.scholarcrm.ai/functions/v1/lead-capture/xcr0dgjrxs?upsert_on_duplicate=true&set_reenquiry_on_duplicate=true';
+            const SCHOLARCRM_TOKEN = 'cabe52d964aff09d8ba3978ca2a0eb7bc0c52e03be28652cd365ffb436e24a90';
 
             if (form) form.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -705,7 +707,44 @@
                     mode: 'no-cors'
                 });
 
-                Promise.all([gasPromise, getLeadPromise])
+                // ScholarCRM — failures must not block the thank-you redirect
+                const phoneDigits = String(phone).replace(/\D/g, '');
+                const adminNoteParts = [
+                    location ? `Location: ${location}` : '',
+                    'Source: Landing Page Ausbildung',
+                    campaignName ? `Campaign: ${campaignName}` : '',
+                    adsetName ? `Adset: ${adsetName}` : '',
+                    adName ? `Ad: ${adName}` : ''
+                ].filter(Boolean);
+
+                const scholarCrmPromise = fetch(SCHOLARCRM_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${SCHOLARCRM_TOKEN}`
+                    },
+                    body: JSON.stringify([{
+                        number: `+91${phoneDigits}`,
+                        name: name,
+                        admin_note: adminNoteParts.join(' | ')
+                    }])
+                }).then(async (res) => {
+                    if (res.status !== 207) {
+                        console.error('ScholarCRM unexpected status:', res.status);
+                        return;
+                    }
+                    const data = await res.json();
+                    const leadResult = data.results && data.results[0];
+                    const statusCode = leadResult && leadResult.status_code;
+                    if (statusCode !== 200 && statusCode !== 201) {
+                        console.error('ScholarCRM lead failed:', leadResult);
+                    }
+                }).catch((error) => {
+                    console.error('ScholarCRM error:', error);
+                });
+
+                Promise.all([gasPromise, getLeadPromise, scholarCrmPromise])
                 .then(() => {
                     localStorage.setItem('lead_submitted', 'true');
                     window.location.href = 'thankyou.html';
