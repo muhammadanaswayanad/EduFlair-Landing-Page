@@ -708,6 +708,7 @@
                 successMessage.classList.add('hidden', 'opacity-0');
 
                 const formData = new FormData(form);
+                formData.append('url', window.location.href);
 
                 fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
